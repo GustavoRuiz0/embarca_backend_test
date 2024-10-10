@@ -24,5 +24,8 @@ RUN chmod +x /home/app/web/config/setup_app.sh
 # Instala as dependências do bundler
 RUN bundle install --jobs 5 --retry 5
 
+RUN bundle exec rake assets:clobber && \
+    bundle exec rails assets:precompile
+
 # Define o ponto de entrada
 ENTRYPOINT ["/bin/bash", "/home/app/web/config/setup_app.sh"]

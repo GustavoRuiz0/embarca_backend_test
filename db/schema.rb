@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20241010020804) do
 
   create_table "cities", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
-    t.uuid     "state_id"
+    t.integer  "state_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_cities_on_state_id", using: :btree
@@ -31,4 +31,5 @@ ActiveRecord::Schema.define(version: 20241010020804) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "cities", "states"
 end
