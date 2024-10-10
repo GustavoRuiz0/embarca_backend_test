@@ -22,4 +22,8 @@ echo ' --> Running migrations '
 rails db:migrate
 echo ' --> End of migrations '
 
+echo ' --> Seeding the database '
+rails db:seed
+echo ' --> Database seeding completed '
+
 exec "$@"
