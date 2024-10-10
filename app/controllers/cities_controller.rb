@@ -8,11 +8,11 @@ class CitiesController < ApplicationController
       @cities = @cities.joins(:state)
 
       if params[:state].present?
-        @cities = @cities.where('states.name LIKE ?', "%#{params[:state]}%")
+        @cities = @cities.where('states.name ILIKE ?', "%#{params[:state]}%")
       end
 
       if params[:name].present?
-        @cities = @cities.where('cities.name LIKE ?', "%#{params[:name]}%")
+        @cities = @cities.where('cities.name ILIKE ?', "%#{params[:name]}%")
       end
     end
   end
