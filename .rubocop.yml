@@ -1,0 +1,28 @@
+inherit_from: .rubocop_todo.yml
+
+inherit_gem:
+  rubocop-rails:
+    - config/default.yml
+
+Style/Encoding:
+  Enabled: false
+
+Rails/SafeNavigation:
+  Enabled: true
+
+
+Style/SafeNavigation:
+  Enabled: true
+
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'config/**/*.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

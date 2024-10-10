@@ -1,13 +1,10 @@
+# frozen_string_literal: true
 class CitiesController < ApplicationController
   def index
-    @cities = City.includes(:state).all
+    @cities = City.all
 
-    if params[:state].present?
-      @cities = @cities.joins(:state).where("states.name ILIKE ?", "%#{params[:state]}%")
-    end
+    @cities = @cities.joins(:state).where(states: { name: params[:state] }) if params[:state].present?
 
-    if params[:name].present?
-      @cities = @cities.where('cities.name ILIKE ?', "%#{params[:name]}%")
-    end
+    @cities = @cities.where('cities.name LIKE ?', "%#{params[:name]}%") if params[:name].present?
   end
 end
