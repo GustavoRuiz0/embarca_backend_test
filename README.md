@@ -52,7 +52,7 @@ Make the setup script executable by running:
 chmod +x config/setup_app.sh
 ```
 
-### Step 3: Build the Docker Images
+### Step 3: Build the Docker Images (Depending on the system and your Linux distribution, docker-compose up and docker-compose build may require sudo permissions. I use Debian, and on Mint, it was necessary as well. Yes, I tested it on virtual machines with other distributions.)
 
 Build the Docker images using Docker Compose:
 
