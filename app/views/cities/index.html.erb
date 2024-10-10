@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidades</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cidades</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Cidades | Gustavo Ruiz, atividade Embarca</h1>
+<div class="container">
+  <h1 class="title">Cidades | Gustavo Ruiz, atividade Embarca</h1>
 
-        <%= form_tag cities_path, method: :get, class: "form" do %>
-          <div class="input-container">
-            <%= label_tag :state, 'Estado', class: "label" %>
-            <%= text_field_tag :state, params[:state], class: "input-field" %>
-          </div>
-          <div class="input-container">
-            <%= label_tag :name, 'Nome da Cidade', class: "label" %>
-            <%= text_field_tag :name, params[:name], class: "input-field" %>
-          </div>
-          <div>
-            <%= submit_tag 'Buscar', class: "submit-button" %>
-          </div>
-        <% end %>
-
-        <h2 class="results-title">Resultados</h2>
-        <table class="results-table">
-          <thead>
-            <tr>
-              <th>Nome da Cidade</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @cities.each do |city| %>
-              <tr class="result-item">
-                <td><%= city.name %></td>
-                <td><%= city.state.name %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+  <%= form_tag cities_path, method: :get, class: "form" do %>
+    <div class="input-container">
+      <%= label_tag :state, 'Estado', class: "label" %>
+      <%= text_field_tag :state, params[:state], class: "input-field" %>
     </div>
+    <div class="input-container">
+      <%= label_tag :name, 'Nome da Cidade', class: "label" %>
+      <%= text_field_tag :name, params[:name], class: "input-field" %>
+    </div>
+    <div>
+      <%= submit_tag 'Buscar', class: "submit-button" %>
+    </div>
+  <% end %>
+
+  <h2 class="results-title">Resultados</h2>
+  <table class="results-table">
+    <thead>
+    <tr>
+      <th>Nome da Cidade</th>
+      <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @cities.each do |city| %>
+      <tr class="result-item">
+        <td><%= city.name %></td>
+        <td><%= city.state.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>

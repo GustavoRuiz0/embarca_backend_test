@@ -23,7 +23,12 @@ Make sure you have the following installed on your machine:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Getting Started
+## Route to use
+The screen stay in
+
+```bash
+http://localhost:3000/cities
+```
 
 ### Step 1: Clone the Repository
 
